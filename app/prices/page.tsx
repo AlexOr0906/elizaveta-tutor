@@ -71,7 +71,6 @@ export default function PricesPage() {
             <dl>
               <div><dt>Программа</dt><dd>{examLabel}</dd></div>
               <div><dt>Формат</dt><dd>Онлайн или офлайн</dd></div>
-              <div><dt>Материалы</dt><dd>Включены в стоимость</dd></div>
             </dl>
             <p className="program-description">{programDescription}</p>
             <Link className="button button-dark" href="/booking">Перейти к расписанию <span>↗</span></Link>

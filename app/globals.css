@@ -30,7 +30,7 @@ button, input, textarea { font: inherit; }
 
 .hero { min-height: 690px; padding: 76px 0 72px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: center; }
 .eyebrow { display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: .13em; font-size: 11px; font-weight: 700; }
-.eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(217,255,92,.35); }
+.eyebrow span { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 5px rgba(237,192,179,.65); }
 h1, h2, blockquote { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.055em; }
 h1 { font-size: clamp(68px, 7.4vw, 112px); line-height: .88; max-width: 760px; margin: 32px 0; }
 h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400; color: transparent; -webkit-text-stroke: 1.5px var(--ink); background: none; }
@@ -49,7 +49,7 @@ h1 em, h2 em { font-family: Georgia, "Times New Roman", serif; font-style: itali
 .portrait-card { background: var(--ink); color: white; padding: 24px; min-height: 530px; position: relative; overflow: hidden; }
 .portrait-topline { display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: .12em; font-size: 9px; opacity: .58; }
 .portrait-visual { position: relative; height: 385px; display: grid; place-items: center; }
-.portrait-monogram { position: relative; z-index: 2; width: 174px; height: 174px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); font-family: Georgia, serif; font-size: 58px; letter-spacing: -.1em; box-shadow: 0 0 0 18px rgba(217,255,92,.08); }
+.portrait-monogram { position: relative; z-index: 2; width: 174px; height: 174px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); font-family: Georgia, serif; font-size: 58px; letter-spacing: -.1em; box-shadow: 0 0 0 18px rgba(237,192,179,.14); }
 .orbit { position: absolute; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; transform: rotate(-25deg); }
 .orbit-one { width: 330px; height: 170px; }.orbit-two { width: 180px; height: 340px; }
 .formula { position: absolute; font-family: Georgia, serif; font-style: italic; color: var(--lime); opacity: .8; }
