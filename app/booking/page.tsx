@@ -69,7 +69,7 @@ export default function BookingPage() {
       <section className="booking-hero shell">
         <p className="eyebrow"><span /> Онлайн · МСК +2</p>
         <h1>Выберите <em>удобное время.</em></h1>
-        <p>Знакомство длится 30 минут и ничего не стоит. Обсудим цель, формат занятий и составим первый план.</p>
+        <p>Пока здесь размещены демонстрационные окошки. Точное расписание и доступное время будут добавлены позже.</p>
       </section>
 
       <section className="booking-shell shell">
@@ -77,7 +77,7 @@ export default function BookingPage() {
           <div className="calendar-side">
             <div className="panel-title">
               <div><span>Шаг 1</span><h2>День и время</h2></div>
-              <span>Ближайшие 7 дней</span>
+              <span>Демонстрационные окна</span>
             </div>
             <div className="week" aria-label="Выбор дня">
               {days.map((day, index) => (
@@ -138,9 +138,9 @@ export default function BookingPage() {
         </div>
 
         <div className="booking-facts">
-          <div><b>30 минут бесплатно</b><p>Знакомство, диагностика и план подготовки без оплаты.</p></div>
-          <div><b>Без обязательств</b><p>После встречи вы спокойно решите, подходит ли вам формат.</p></div>
-          <div><b>Нужен другой день?</b><p>Напишите в Telegram — попробуем подобрать дополнительное окно.</p></div>
+          <div><b>1–9 класс</b><p>Математика и русский язык в понятной и доступной форме.</p></div>
+          <div><b>Онлайн и офлайн</b><p>Подберём удобный формат после подтверждения записи.</p></div>
+          <div><b>Расписание уточняется</b><p>Настоящие свободные окошки будут добавлены после согласования.</p></div>
         </div>
       </section>
       <SiteFooter />

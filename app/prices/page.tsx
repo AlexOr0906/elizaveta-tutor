@@ -12,19 +12,17 @@ const subjectNames: Record<Subject, string> = {
   russian: "Русский язык",
 };
 
-function getLessonPrice(grade: number, subject: Subject) {
-  if (grade <= 4) return subject === "math" ? 1200 : 1200;
-  if (grade <= 8) return subject === "math" ? 1500 : 1400;
-  if (grade === 9) return subject === "math" ? 1800 : 1700;
-  if (grade === 10) return subject === "math" ? 1900 : 1800;
-  return subject === "math" ? 2200 : 2100;
+function getLessonPrice(grade: number, _subject: Subject) {
+  if (grade <= 4) return 850;
+  if (grade <= 8) return 1000;
+  return 1200;
 }
 
 export default function PricesPage() {
-  const [grade, setGrade] = useState(7);
+  const [grade, setGrade] = useState(5);
   const [subject, setSubject] = useState<Subject>("math");
   const price = useMemo(() => getLessonPrice(grade, subject), [grade, subject]);
-  const examLabel = grade === 9 ? "Подготовка к ОГЭ" : grade === 11 ? "Подготовка к ЕГЭ" : "Школьная программа";
+  const examLabel = grade === 9 ? "Подготовка к ОГЭ" : "Школьная программа / ВПР";
 
   return (
     <main className="inner-page price-page">
@@ -32,7 +30,7 @@ export default function PricesPage() {
       <section className="inner-hero prices-hero shell">
         <p className="eyebrow"><span /> Стоимость занятий</p>
         <h1>Выберите класс<br />и <em>предмет.</em></h1>
-        <div className="inner-hero-bottom"><p>Цена рассчитывается сразу после выбора. Сейчас указаны примерные значения — позже их можно заменить на ваши.</p></div>
+        <div className="inner-hero-bottom"><p>Выберите класс ребёнка и предмет — стоимость индивидуального занятия рассчитается автоматически.</p></div>
       </section>
 
       <section className="calculator-section shell">
@@ -42,7 +40,7 @@ export default function PricesPage() {
             <label className="select-label" htmlFor="grade">Класс</label>
             <div className="select-wrap">
               <select id="grade" value={grade} onChange={(event) => setGrade(Number(event.target.value))}>
-                {Array.from({ length: 11 }, (_, index) => index + 1).map((item) => <option key={item} value={item}>{item} класс</option>)}
+                {Array.from({ length: 9 }, (_, index) => index + 1).map((item) => <option key={item} value={item}>{item} класс</option>)}
               </select>
               <span aria-hidden="true">↓</span>
             </div>
@@ -64,14 +62,14 @@ export default function PricesPage() {
             <small>за индивидуальное занятие · 60 минут</small>
             <dl>
               <div><dt>Программа</dt><dd>{examLabel}</dd></div>
-              <div><dt>Формат</dt><dd>Онлайн, индивидуально</dd></div>
+              <div><dt>Формат</dt><dd>Онлайн или офлайн</dd></div>
               <div><dt>Материалы</dt><dd>Включены в стоимость</dd></div>
             </dl>
             <Link className="button button-dark" href="/booking">Перейти к расписанию <span>↗</span></Link>
           </aside>
         </div>
 
-        <p className="price-disclaimer">Это демонстрационная сетка цен. Перед публикацией подставим вашу настоящую стоимость для каждого класса и предмета.</p>
+        <p className="price-disclaimer">1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; 9 класс и подготовка к ОГЭ — 1 200 ₽. Цена одинакова для математики и русского языка.</p>
       </section>
       <SiteFooter />
     </main>
