@@ -18,11 +18,18 @@ function getLessonPrice(grade: number, _subject: Subject) {
   return 1200;
 }
 
+function getProgramDescription(grade: number) {
+  if (grade <= 4) return "Заполнение пробелов, помощь с домашними заданиями, интерес к предмету и развитие усидчивости.";
+  if (grade <= 8) return "Разбор сложных тем, повышение успеваемости, подготовка к контрольным и ВПР, обучение самопроверке.";
+  return "Системный разбор заданий ОГЭ, отработка типовых ошибок и уверенная подготовка к экзамену.";
+}
+
 export default function PricesPage() {
   const [grade, setGrade] = useState(5);
   const [subject, setSubject] = useState<Subject>("math");
   const price = useMemo(() => getLessonPrice(grade, subject), [grade, subject]);
   const examLabel = grade === 9 ? "Подготовка к ОГЭ" : "Школьная программа / ВПР";
+  const programDescription = getProgramDescription(grade);
 
   return (
     <main className="inner-page price-page">
@@ -34,6 +41,7 @@ export default function PricesPage() {
       </section>
 
       <section className="calculator-section shell">
+        <div className="trial-offer"><div><span>Пробное занятие</span><p>Для любого класса и направления</p></div><strong>500 ₽</strong><small>первое занятие</small></div>
         <div className="price-calculator">
           <div className="calculator-controls">
             <div className="calculator-heading"><span>01</span><div><small>Первый шаг</small><h2>В каком классе ребёнок?</h2></div></div>
@@ -65,11 +73,12 @@ export default function PricesPage() {
               <div><dt>Формат</dt><dd>Онлайн или офлайн</dd></div>
               <div><dt>Материалы</dt><dd>Включены в стоимость</dd></div>
             </dl>
+            <p className="program-description">{programDescription}</p>
             <Link className="button button-dark" href="/booking">Перейти к расписанию <span>↗</span></Link>
           </aside>
         </div>
 
-        <p className="price-disclaimer">1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; 9 класс и подготовка к ОГЭ — 1 200 ₽. Цена одинакова для математики и русского языка.</p>
+        <p className="price-disclaimer">Пробное занятие — 500 ₽. 1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; подготовка к ОГЭ — 1 200 ₽. Продолжительность основного занятия — 60 минут.</p>
       </section>
       <SiteFooter />
     </main>

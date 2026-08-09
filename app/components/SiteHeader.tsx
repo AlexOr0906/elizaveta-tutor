@@ -9,7 +9,7 @@ export function SiteHeader({ active = "about" }: SiteHeaderProps) {
     <header className="site-header shell">
       <Link className="brand" href="/" aria-label="Елизавета Вячеславовна — обо мне">
         <span className="brand-mark">ЕВ</span>
-        <span className="brand-copy">Елизавета Вячеславовна<br /><small>помощник в учёбе</small></span>
+        <span className="brand-copy">Елизавета Вячеславовна<br /><small>преподаватель</small></span>
       </Link>
       <nav className="page-nav" aria-label="Основная навигация">
         <Link className={active === "about" ? "active" : ""} href="/">Обо мне</Link>
