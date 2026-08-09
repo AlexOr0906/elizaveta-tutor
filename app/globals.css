@@ -72,15 +72,18 @@ h2 { font-size: clamp(48px, 5vw, 76px); line-height: .98; margin: 0; }
 .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; margin: 52px 0 0; padding-top: 30px; border-top: 1px solid var(--line); }
 .stats dt { font-family: Georgia, serif; font-size: 38px; }.stats dd { margin: 4px 0 0; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; opacity: .55; }
 
-.approach { background: var(--ink); color: white; }
+.approach { background: #eceae5; color: var(--ink); }
 .section-heading-row { display: grid; grid-template-columns: 1fr 340px; gap: 90px; align-items: end; }
-.section-heading-row h2 em, .approach h2 em { -webkit-text-stroke-color: white; }
-.section-heading-row > p { margin: 0; line-height: 1.7; opacity: .6; }
-.steps { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 80px; border-top: 1px solid rgba(255,255,255,.18); }
-.steps article { min-height: 330px; padding: 26px 36px 0 0; border-right: 1px solid rgba(255,255,255,.18); margin-right: 36px; position: relative; }
-.steps article:last-child { border-right: 0; margin-right: 0; }
-.steps article > span { font-size: 10px; color: var(--lime); }.step-symbol { font-family: Georgia, serif; font-size: 54px; color: var(--lime); margin: 46px 0 28px; }
-.steps h3 { font-family: Georgia, serif; font-size: 25px; font-weight: 400; margin: 0 0 14px; }.steps p { font-size: 13px; line-height: 1.65; opacity: .55; }
+.approach .section-kicker.light { color:#98566a; }
+.section-heading-row h2 em, .approach h2 em { -webkit-text-stroke-color: var(--ink); }
+.section-heading-row > p { margin: 0; line-height: 1.7; opacity: .72; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top: 80px; border-top:0; }
+.steps article { min-height: 330px; padding:30px; border:1px solid var(--line); margin:0; position: relative; background:#ffffff; }
+.steps article:nth-child(2) { background:#dbe5df; }
+.steps article:nth-child(3) { background:#efd9d3; }
+.steps article:last-child { border:1px solid var(--line); margin:0; }
+.steps article > span { font-size: 10px; color:#98566a; font-weight:700; }.step-symbol { font-family: Georgia, serif; font-size: 54px; color:var(--ink); margin:46px 0 28px; }
+.steps h3 { font-family: Georgia, serif; font-size:25px; font-weight:400; margin:0 0 14px; }.steps p { font-size:13px; line-height:1.65; opacity:.68; }
 
 .dark-text h2 em { -webkit-text-stroke-color: var(--ink); }
 .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 70px; }
@@ -157,7 +160,7 @@ footer { background: #3e1d29; color: white; padding: 72px 0 28px; }
 .price-cta .button { color:white; border-color:white; min-width:280px; }
 
 @media (max-width: 900px) {
-  .shell { width:min(100% - 30px, 680px); }.site-header .page-nav { display:none; }.home-page { overflow:visible; }.home-hero { min-height:auto; }.hero { grid-template-columns:1fr; gap:45px; padding-top:55px; }.portrait-card { min-height:480px; }.about-intro,.section-heading-row,.booking-teaser,.inner-hero-bottom,.price-details { grid-template-columns:1fr; gap:45px; }.steps,.price-grid { grid-template-columns:1fr; }.steps article { border-right:0; border-bottom:1px solid rgba(255,255,255,.18); margin-right:0; padding-bottom:35px; }.price-card { min-height:380px; }.booking-panel { grid-template-columns:1fr; }.calendar-side { border-right:0;border-bottom:1px solid var(--line); }.week { grid-template-columns:repeat(3,1fr); }.times { grid-template-columns:repeat(3,1fr); }.booking-facts { grid-template-columns:1fr; }.footer-grid { grid-template-columns:1.5fr 1fr; }.footer-grid > div:last-child { display:none; }.price-details ul { grid-template-columns:1fr; }.price-details li:nth-child(2) { border-top:1px solid var(--line); padding-top:24px; }
+  .shell { width:min(100% - 30px, 680px); }.site-header .page-nav { display:none; }.home-page { overflow:visible; }.home-hero { min-height:auto; }.hero { grid-template-columns:1fr; gap:45px; padding-top:55px; }.portrait-card { min-height:480px; }.about-intro,.section-heading-row,.booking-teaser,.inner-hero-bottom,.price-details { grid-template-columns:1fr; gap:45px; }.steps,.price-grid { grid-template-columns:1fr; }.steps article { border:1px solid var(--line); margin-right:0; padding:30px; }.price-card { min-height:380px; }.booking-panel { grid-template-columns:1fr; }.calendar-side { border-right:0;border-bottom:1px solid var(--line); }.week { grid-template-columns:repeat(3,1fr); }.times { grid-template-columns:repeat(3,1fr); }.booking-facts { grid-template-columns:1fr; }.footer-grid { grid-template-columns:1.5fr 1fr; }.footer-grid > div:last-child { display:none; }.price-details ul { grid-template-columns:1fr; }.price-details li:nth-child(2) { border-top:1px solid var(--line); padding-top:24px; }
 }
 @media (max-width: 560px) {
   .shell { width:calc(100% - 24px); }.site-header { height:78px; }.brand-copy { display:none; }.header-cta { font-size:11px; }.hero { min-height:auto; padding:48px 0; }.hero-copy h1,.inner-hero h1 { font-size:55px; }.hero-actions { align-items:flex-start; flex-direction:column; gap:20px; }.route-links { grid-template-columns:1fr; }.route-links a,.route-links a:not(:first-child) { padding:15px 0; border-right:0; border-bottom:1px solid var(--line); }.portrait-card { min-height:420px; padding:18px; }.portrait-visual { height:310px; }.portrait-monogram { width:140px;height:140px;font-size:46px; }.orbit-one { width:275px;height:140px; }.orbit-two { width:150px;height:285px; }.section { padding-block:88px; }.inner-hero { padding:55px 0 65px; }.section-kicker { margin-bottom:36px; }.about-intro h2,.section-heading-row h2,.booking-copy h2,.price-details h2 { font-size:45px; }.stats { gap:8px; }.stats dt { font-size:29px; }.stats dd { letter-spacing:0;font-size:8px; }.schedule-preview { padding:20px;box-shadow:7px 7px 0 var(--blue); }.schedule-row { grid-template-columns:1fr 75px 75px; }.schedule-row.muted { grid-template-columns:1fr 160px; }.booking-hero { padding-top:50px; }.booking-hero h1 { font-size:55px; }.booking-panel { box-shadow:7px 7px 0 var(--blue); }.calendar-side,.form-side { padding:25px 20px; }.times { grid-template-columns:repeat(2,1fr); }.footer-grid { grid-template-columns:1fr; }.footer-grid > div:not(:first-child) { margin-top:20px; }.footer-bottom { flex-direction:column;gap:10px; }
