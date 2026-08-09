@@ -21,14 +21,14 @@ function getLessonPrice(grade: number, _subject: Subject) {
 function getProgramDescription(grade: number) {
   if (grade <= 4) return "Заполнение пробелов, помощь с домашними заданиями, интерес к предмету и развитие усидчивости.";
   if (grade <= 8) return "Разбор сложных тем, повышение успеваемости, подготовка к контрольным и ВПР, обучение самопроверке.";
-  return "Системный разбор заданий ОГЭ, отработка типовых ошибок и уверенная подготовка к экзамену.";
+  return "Школьная программа или системная подготовка к ОГЭ: разбор тем и заданий, отработка типовых ошибок и уверенная подготовка к экзамену.";
 }
 
 export default function PricesPage() {
   const [grade, setGrade] = useState(5);
   const [subject, setSubject] = useState<Subject>("math");
   const price = useMemo(() => getLessonPrice(grade, subject), [grade, subject]);
-  const examLabel = grade === 9 ? "Подготовка к ОГЭ" : "Школьная программа / ВПР";
+  const examLabel = grade === 9 ? "Школьная программа / подготовка к ОГЭ" : "Школьная программа / ВПР";
   const programDescription = getProgramDescription(grade);
 
   return (
@@ -77,7 +77,7 @@ export default function PricesPage() {
           </aside>
         </div>
 
-        <p className="price-disclaimer">Пробное занятие — 500 ₽. 1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; подготовка к ОГЭ — 1 200 ₽. Продолжительность основного занятия — 60 минут.</p>
+        <p className="price-disclaimer">Пробное занятие — 500 ₽. 1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; 9 класс, школьная программа или подготовка к ОГЭ — 1 200 ₽. Продолжительность основного занятия — 60 минут.</p>
       </section>
       <SiteFooter />
     </main>
