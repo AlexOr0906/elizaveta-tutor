@@ -65,7 +65,7 @@ export default function BookingPage() {
         <div className="booking-facts">
           <div><b>1–9 класс</b><p>Математика и русский язык.</p></div>
           <div><b>Онлайн и офлайн</b><p>Формат согласуем при подтверждении.</p></div>
-          <div><b>Точные часы позже</b><p>Обновим страницу, когда расписание будет готово.</p></div>
+          <div><b>60 минут</b><p>Продолжительность основного занятия.</p></div>
         </div>
       </section>
       <SiteFooter />
