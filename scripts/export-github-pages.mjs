@@ -48,7 +48,7 @@ function makeStatic(html) {
 
   result = result.replace(
     "</head>",
-    `<link rel="stylesheet" href="${basePath}/assets/site.css"/><link rel="icon" href="${basePath}/favicon.svg"/></head>`,
+    `<link rel="stylesheet" href="${basePath}/assets/site-v2.css"/><link rel="icon" href="${basePath}/favicon.svg"/></head>`,
   );
   result = result.replace(
     "</body>",
@@ -62,7 +62,7 @@ await mkdir(path.join(output, "assets"), { recursive: true });
 await mkdir(path.join(output, "images"), { recursive: true });
 if (futureFeatures) await writeFile(path.join(output, "future-features.md"), futureFeatures);
 
-await cp(await getBuiltStylesheet(), path.join(output, "assets", "site.css"));
+await cp(await getBuiltStylesheet(), path.join(output, "assets", "site-v2.css"));
 await cp(
   path.join(root, "scripts", "github-pages-runtime.js"),
   path.join(output, "assets", "pages-runtime.js"),
