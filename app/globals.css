@@ -173,15 +173,6 @@ footer { background: #3e1d29; color: white; padding: 90px 0 34px; }
 .profile-lead { max-width:650px; font-size:18px; line-height:1.7; opacity:.7; }
 .profile-facts { display:flex; flex-wrap:wrap; gap:9px; margin-top:36px; }.profile-facts span { padding:10px 14px; border:1px solid var(--line); background:#fff; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
 .profile-story { padding:125px 0; }
-.profile-story .section-kicker { margin-bottom:34px; text-align:center; }
-.profile-story .about-intro { display:block; }
-.profile-story .about-intro > h2 { max-width:980px; margin:0 auto 72px; text-align:center; }
-.profile-story .about-copy { max-width:1100px; margin:0 auto; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 64px; }
-.profile-story .about-copy > p { margin:0; padding-top:30px; border-top:1px solid var(--line); }
-.profile-story .about-copy > .about-experience { grid-column:1 / -1; width:100%; margin:14px 0 0; }
-.profile-story .about-copy > .about-current { grid-column:1 / -1; width:100%; margin:0; padding:25px 30px; border-top:0; border-radius:14px; background:#dbe5df; text-align:center; font-family:Georgia,"Times New Roman",serif; font-size:26px; line-height:1.35; opacity:1; }
-.profile-story .about-copy > .about-method { grid-column:1 / -1; width:min(820px,100%); margin:0 auto; text-align:center; }
-.profile-story .confirmed-stats { grid-column:1 / -1; width:100%; margin-top:34px; }
 .cases-section { padding:110px 0; background:#ffffff; border-block:1px solid var(--line); }
 .cases-heading { display:grid; grid-template-columns:1fr 360px; gap:80px; align-items:end; }.cases-heading h2 { margin:0; }.cases-heading > p { margin:0; font-size:14px; line-height:1.7; opacity:.65; }
 .case-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:65px; }
@@ -289,11 +280,6 @@ footer { background: #3e1d29; color: white; padding: 90px 0 34px; }
 }
 
 @media (max-width: 560px) {
-  .profile-story .about-intro > h2 { margin-bottom:48px; }
-  .profile-story .about-copy { grid-template-columns:1fr; gap:26px; }
-  .profile-story .about-copy > .about-experience,.profile-story .about-copy > .about-current,.profile-story .about-copy > .about-method,.profile-story .confirmed-stats { grid-column:auto; }
-  .profile-story .about-copy > .about-experience,.profile-story .about-copy > .about-method { margin-top:0; text-align:left; }
-  .profile-story .about-copy > .about-current { padding:22px 20px; font-size:21px; }
   .availability-list button { grid-template-columns:22px minmax(0,1fr) auto 16px; gap:8px; }
   .availability-list button small { display:block; font-size:10px; white-space:nowrap; }
   .availability-list button b { font-size:18px; overflow:hidden; text-overflow:ellipsis; }
