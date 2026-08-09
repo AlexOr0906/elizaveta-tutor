@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
 
 type DayOption = {
   iso: string;
@@ -63,13 +64,7 @@ export default function BookingPage() {
 
   return (
     <main className="booking-page">
-      <header className="site-header booking-header shell">
-        <Link className="brand" href="/">
-          <span className="brand-mark">АО</span>
-          <span className="brand-copy">Алексей Орлов<br /><small>частный репетитор</small></span>
-        </Link>
-        <Link className="back-link" href="/">← Вернуться на главную</Link>
-      </header>
+      <SiteHeader active="booking" />
 
       <section className="booking-hero shell">
         <p className="eyebrow"><span /> Онлайн · МСК +2</p>
@@ -148,6 +143,7 @@ export default function BookingPage() {
           <div><b>Нужен другой день?</b><p>Напишите в Telegram — попробуем подобрать дополнительное окно.</p></div>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }
