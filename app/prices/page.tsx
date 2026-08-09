@@ -1,50 +1,77 @@
+"use client";
+
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 
+type Subject = "math" | "russian";
+
+const subjectNames: Record<Subject, string> = {
+  math: "Математика",
+  russian: "Русский язык",
+};
+
+function getLessonPrice(grade: number, subject: Subject) {
+  if (grade <= 4) return subject === "math" ? 1200 : 1200;
+  if (grade <= 8) return subject === "math" ? 1500 : 1400;
+  if (grade === 9) return subject === "math" ? 1800 : 1700;
+  if (grade === 10) return subject === "math" ? 1900 : 1800;
+  return subject === "math" ? 2200 : 2100;
+}
+
 export default function PricesPage() {
+  const [grade, setGrade] = useState(7);
+  const [subject, setSubject] = useState<Subject>("math");
+  const price = useMemo(() => getLessonPrice(grade, subject), [grade, subject]);
+  const examLabel = grade === 9 ? "Подготовка к ОГЭ" : grade === 11 ? "Подготовка к ЕГЭ" : "Школьная программа";
+
   return (
     <main className="inner-page price-page">
       <SiteHeader active="prices" />
       <section className="inner-hero prices-hero shell">
-        <p className="eyebrow"><span /> Форматы и стоимость</p>
-        <h1>Понятные цены.<br /><em>Никаких сюрпризов.</em></h1>
-        <div className="inner-hero-bottom"><p>Оплата после подтверждения времени. Все материалы, интерактивная доска и короткие отчёты уже входят в стоимость.</p></div>
+        <p className="eyebrow"><span /> Стоимость занятий</p>
+        <h1>Выберите класс<br />и <em>предмет.</em></h1>
+        <div className="inner-hero-bottom"><p>Цена рассчитывается сразу после выбора. Сейчас указаны примерные значения — позже их можно заменить на ваши.</p></div>
       </section>
 
-      <section className="prices-content shell">
-        <div className="price-grid standalone-prices">
-          <article className="price-card featured">
-            <span className="tag">Самый популярный</span>
-            <p className="card-number">01</p><h3>Индивидуально</h3><p>Персональный темп и программа под конкретную цель: школьная программа, ОГЭ или ЕГЭ.</p>
-            <div className="price"><strong>1 800 ₽</strong><span>/ 60 минут</span></div>
-            <Link href="/booking">Выбрать время <span>↗</span></Link>
-          </article>
-          <article className="price-card">
-            <p className="card-number">02</p><h3>В паре</h3><p>Для друзей или учеников одного уровня. Больше практики, обсуждений и живого диалога.</p>
-            <div className="price"><strong>1 200 ₽</strong><span>/ 60 минут с человека</span></div>
-            <Link href="/booking">Выбрать время <span>↗</span></Link>
-          </article>
-          <article className="price-card">
-            <p className="card-number">03</p><h3>Знакомство</h3><p>Диагностика знаний, обсуждение цели и персональный план первых занятий.</p>
-            <div className="price"><strong>Бесплатно</strong><span>/ 30 минут</span></div>
-            <Link href="/booking">Записаться <span>↗</span></Link>
-          </article>
+      <section className="calculator-section shell">
+        <div className="price-calculator">
+          <div className="calculator-controls">
+            <div className="calculator-heading"><span>01</span><div><small>Первый шаг</small><h2>В каком классе ребёнок?</h2></div></div>
+            <label className="select-label" htmlFor="grade">Класс</label>
+            <div className="select-wrap">
+              <select id="grade" value={grade} onChange={(event) => setGrade(Number(event.target.value))}>
+                {Array.from({ length: 11 }, (_, index) => index + 1).map((item) => <option key={item} value={item}>{item} класс</option>)}
+              </select>
+              <span aria-hidden="true">↓</span>
+            </div>
+
+            <div className="calculator-heading subject-heading"><span>02</span><div><small>Второй шаг</small><h2>Какой предмет нужен?</h2></div></div>
+            <div className="subject-options" role="radiogroup" aria-label="Выберите предмет">
+              {(Object.keys(subjectNames) as Subject[]).map((key) => (
+                <button type="button" key={key} className={subject === key ? "selected" : ""} onClick={() => setSubject(key)} aria-pressed={subject === key}>
+                  <span>{key === "math" ? "∑" : "Аа"}</span><b>{subjectNames[key]}</b>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <aside className="calculated-price" aria-live="polite">
+            <span className="result-label">Ваша стоимость</span>
+            <div className="result-subject">{subjectNames[subject]} · {grade} класс</div>
+            <strong>{price.toLocaleString("ru-RU")} ₽</strong>
+            <small>за индивидуальное занятие · 60 минут</small>
+            <dl>
+              <div><dt>Программа</dt><dd>{examLabel}</dd></div>
+              <div><dt>Формат</dt><dd>Онлайн, индивидуально</dd></div>
+              <div><dt>Материалы</dt><dd>Включены в стоимость</dd></div>
+            </dl>
+            <Link className="button button-dark" href="/booking">Перейти к расписанию <span>↗</span></Link>
+          </aside>
         </div>
 
-        <div className="price-details">
-          <div><span>В стоимость входит</span><h2>Всё, что нужно<br />для результата.</h2></div>
-          <ul>
-            <li><b>Интерактивные занятия</b><small>Видеосвязь и онлайн-доска — ничего дополнительно устанавливать не нужно.</small></li>
-            <li><b>Все учебные материалы</b><small>Конспекты, задания и записи с доски остаются у ученика.</small></li>
-            <li><b>Обратная связь</b><small>Можно задать короткий вопрос между занятиями в мессенджере.</small></li>
-            <li><b>Отчёт о прогрессе</b><small>Раз в месяц родители получают краткий и понятный итог.</small></li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="price-cta">
-        <div className="shell"><p>Не уверены, какой формат выбрать?</p><h2>Начните с бесплатного <em>знакомства.</em></h2><Link className="button" href="/booking">Посмотреть расписание <span>↗</span></Link></div>
+        <p className="price-disclaimer">Это демонстрационная сетка цен. Перед публикацией подставим вашу настоящую стоимость для каждого класса и предмета.</p>
       </section>
       <SiteFooter />
     </main>
