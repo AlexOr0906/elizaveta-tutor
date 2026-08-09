@@ -8,13 +8,11 @@ export default function AboutHomePage() {
       <SiteHeader active="about" />
 
       <section className="profile-hero shell">
-        <div className="photo-placeholder" aria-label="Место для фотографии репетитора">
-          <div className="photo-frame">
-            <span className="photo-icon" aria-hidden="true">◇</span>
-            <strong>Место для вашего фото</strong>
-            <small>Лучше всего подойдёт вертикальный портрет<br />на спокойном светлом фоне</small>
+        <div className="photo-placeholder">
+          <div className="photo-frame photo-frame-filled">
+            <img src="/images/elizaveta-vyacheslavovna.png" alt="Елизавета Вячеславовна — репетитор по математике и русскому языку" />
           </div>
-          <div className="photo-label"><span>Фото репетитора</span><span>01 / 01</span></div>
+          <div className="photo-label"><span>Елизавета Вячеславовна</span><span>Репетитор</span></div>
         </div>
 
         <div className="profile-copy">
