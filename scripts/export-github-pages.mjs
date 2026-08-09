@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -23,6 +23,15 @@ async function download(pathname) {
   const response = await fetch(`${sourceOrigin}${pathname}`);
   if (!response.ok) throw new Error(`Cannot export ${pathname}: ${response.status}`);
   return response.text();
+}
+
+async function getBuiltStylesheet() {
+  const cssDirectory = path.join(root, "dist", "client", "_next", "static", "css");
+  const cssFiles = (await readdir(cssDirectory)).filter((file) => file.endsWith(".css"));
+  if (cssFiles.length !== 1) {
+    throw new Error(`Expected one production stylesheet, found ${cssFiles.length}`);
+  }
+  return path.join(cssDirectory, cssFiles[0]);
 }
 
 function makeStatic(html) {
@@ -53,7 +62,7 @@ await mkdir(path.join(output, "assets"), { recursive: true });
 await mkdir(path.join(output, "images"), { recursive: true });
 if (futureFeatures) await writeFile(path.join(output, "future-features.md"), futureFeatures);
 
-await writeFile(path.join(output, "assets", "site.css"), await download("/app/globals.css"));
+await cp(await getBuiltStylesheet(), path.join(output, "assets", "site.css"));
 await cp(
   path.join(root, "scripts", "github-pages-runtime.js"),
   path.join(output, "assets", "pages-runtime.js"),
