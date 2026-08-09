@@ -134,6 +134,9 @@ footer { background: #3e1d29; color: white; padding: 72px 0 28px; }
 .route-links a:hover i { transform:translate(3px,-3px); }
 
 .inner-page { background:var(--cream); }
+.about-page { background:#f5f4f0; }
+.about-page .site-header,.about-page .inner-hero { background:#f5f4f0; }
+.about-page .about-story { background:#ffffff; }
 .inner-hero { padding:82px 0 92px; border-bottom:1px solid var(--line); }
 .inner-hero h1 { max-width:1050px; font-size:clamp(58px,7vw,106px); margin:32px 0 50px; }
 .inner-hero-bottom { display:grid; grid-template-columns:1fr auto; align-items:end; gap:60px; }

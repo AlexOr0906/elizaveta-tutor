@@ -4,7 +4,7 @@ import { SiteHeader } from "../components/SiteHeader";
 
 export default function AboutPage() {
   return (
-    <main className="inner-page">
+    <main className="inner-page about-page">
       <SiteHeader active="about" />
       <section className="inner-hero shell">
         <p className="eyebrow"><span /> Обо мне</p>
