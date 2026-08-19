@@ -10,6 +10,8 @@ const routes = [
   { pathname: "/", file: "index.html" },
   { pathname: "/prices", file: "prices/index.html" },
   { pathname: "/booking", file: "booking/index.html" },
+  { pathname: "/privacy", file: "privacy/index.html" },
+  { pathname: "/admin", file: "admin/index.html" },
 ];
 
 let futureFeatures;
@@ -42,6 +44,8 @@ function makeStatic(html) {
     .replace(/<!--\s*-->/g, "")
     .replace(/href="\/prices"/g, `href="${basePath}/prices/"`)
     .replace(/href="\/booking"/g, `href="${basePath}/booking/"`)
+    .replace(/href="\/privacy"/g, `href="${basePath}/privacy/"`)
+    .replace(/href="\/admin"/g, `href="${basePath}/admin/"`)
     .replace(/href="\/"/g, `href="${basePath}/"`)
     .replace(/href="\/favicon\.svg"/g, `href="${basePath}/favicon.svg"`)
     .replace(/src="\/images\//g, `src="${basePath}/images/`);

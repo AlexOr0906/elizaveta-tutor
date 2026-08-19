@@ -39,3 +39,20 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# local deployment artifacts and downloaded runtimes
+/*.zip
+/php-runtime-*/
+/phpmailer-source-*/
+/timeweb-site/
+/timeweb-*-update-*/
+/timeweb-email-only-*/
+/timeweb-limit-*/
+/timeweb-smtp-*/
+/timeweb-telegram-*/
+/google-apps-script/
+/tsconfig.tsbuildinfo
+
+# server secrets are configured only on Timeweb
+/timeweb-backend/.private/config.php
+/timeweb-backend/.private/backups/
