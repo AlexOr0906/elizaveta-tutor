@@ -5,6 +5,7 @@ const root = process.cwd();
 const output = path.join(root, "docs");
 const sourceOrigin = process.env.PAGES_SOURCE_ORIGIN ?? "http://127.0.0.1:3000";
 const basePath = (process.env.PAGES_BASE_PATH ?? "/elizaveta-tutor").replace(/\/$/, "");
+const assetVersion = process.env.PAGES_ASSET_VERSION ?? "20260820-1";
 
 const routes = [
   { pathname: "/", file: "index.html" },
@@ -52,11 +53,11 @@ function makeStatic(html) {
 
   result = result.replace(
     "</head>",
-    `<link rel="stylesheet" href="${basePath}/assets/site-v2.css"/><link rel="icon" href="${basePath}/favicon.svg"/></head>`,
+    `<link rel="stylesheet" href="${basePath}/assets/site-v2.css?v=${assetVersion}"/><link rel="icon" href="${basePath}/favicon.svg"/></head>`,
   );
   result = result.replace(
     "</body>",
-    `<script src="${basePath}/assets/pages-runtime.js" defer></script></body>`,
+    `<script src="${basePath}/assets/pages-runtime.js?v=${assetVersion}" defer></script></body>`,
   );
   return result;
 }

@@ -56,3 +56,5 @@ yarn-error.log*
 # server secrets are configured only on Timeweb
 /timeweb-backend/.private/config.php
 /timeweb-backend/.private/backups/
+/ADMIN_ACCESS.txt
+/remote-pages-runtime.js
