@@ -68,6 +68,18 @@
         };
       });
     };
+    const formatWindowCount = (count) => {
+      const lastTwo = count % 100;
+      const last = count % 10;
+      const word = lastTwo >= 11 && lastTwo <= 14
+        ? "окон"
+        : last === 1
+          ? "окно"
+          : last >= 2 && last <= 4
+            ? "окна"
+            : "окон";
+      return `${count} ${word}`;
+    };
     const updateSummary = () => {
       if (summary) summary.textContent = selectedDay && selectedSlot
         ? `${selectedDay.weekday}, ${selectedDay.label}, ${selectedSlot.slot_time}`
@@ -96,7 +108,7 @@
         const button = document.createElement("button"); button.type = "button";
         button.className = day.date === selectedDay?.date ? "selected" : "";
         button.setAttribute("aria-pressed", String(day.date === selectedDay?.date));
-        button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><b>${escapeHtml(day.weekday)}</b><small>${escapeHtml(day.label)} · ${day.slots.length} ${day.slots.length === 1 ? "окно" : "окна"}</small><i>→</i>`;
+        button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span><b>${escapeHtml(day.weekday)}</b><small>${escapeHtml(day.label)} · ${formatWindowCount(day.slots.length)}</small><i>→</i>`;
         button.addEventListener("click", () => { selectedDay = day; selectedSlot = day.slots[0]; renderDays(); renderTimes(); });
         return button;
       }));
