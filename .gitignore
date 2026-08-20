@@ -58,3 +58,4 @@ yarn-error.log*
 /timeweb-backend/.private/backups/
 /ADMIN_ACCESS.txt
 /remote-pages-runtime.js
+/backups/
