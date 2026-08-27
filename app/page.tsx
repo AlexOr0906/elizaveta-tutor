@@ -19,6 +19,7 @@ export default function AboutHomePage() {
           <p className="eyebrow"><span /> Математика и русский язык</p>
           <h1>Здравствуйте!<br />Я — <em>Елизавета Вячеславовна.</em></h1>
           <p className="profile-lead">Я преподаватель, которому можно спокойно сказать: «Я не знаю», «Я не понял» или «Повторите, пожалуйста» — и вместе разобраться без страха и стеснения.</p>
+          <p className="profile-contact">По любым вопросам занятий можно написать мне в Telegram: <a href="https://t.me/lizochkaorlowa" target="_blank" rel="noreferrer">@lizochkaorlowa</a></p>
           <div className="profile-facts">
             <span>Беру учеников 1–9 классов</span><span>Онлайн и офлайн</span>
           </div>
