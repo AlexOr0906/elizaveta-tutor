@@ -5,7 +5,7 @@ const root = process.cwd();
 const output = path.join(root, "docs");
 const sourceOrigin = process.env.PAGES_SOURCE_ORIGIN ?? "http://127.0.0.1:3000";
 const basePath = (process.env.PAGES_BASE_PATH ?? "/elizaveta-tutor").replace(/\/$/, "");
-const assetVersion = process.env.PAGES_ASSET_VERSION ?? "20260820-2";
+const assetVersion = process.env.PAGES_ASSET_VERSION ?? "20260827-1";
 
 const routes = [
   { pathname: "/", file: "index.html" },
