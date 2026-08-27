@@ -41,7 +41,7 @@ export default function PricesPage() {
       </section>
 
       <section className="calculator-section shell">
-        <div className="trial-offer"><div><span>Пробное занятие</span><p>Для любого класса и направления</p></div><strong>500 ₽</strong><small>первое занятие</small></div>
+        <div className="trial-offer"><div><span>Пробное занятие</span><p>Для любого класса и направления</p></div><strong>0 ₽</strong><small>первое занятие</small></div>
         <div className="price-calculator">
           <div className="calculator-controls">
             <div className="calculator-heading"><span>01</span><div><small>Первый шаг</small><h2>В каком классе ребёнок?</h2></div></div>
@@ -77,7 +77,7 @@ export default function PricesPage() {
           </aside>
         </div>
 
-        <p className="price-disclaimer">Пробное занятие — 500 ₽. 1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; 9 класс, школьная программа или подготовка к ОГЭ — 1 200 ₽. Продолжительность основного занятия — 60 минут.</p>
+        <p className="price-disclaimer">Пробное занятие — 0 ₽. 1–4 класс — 850 ₽; 5–8 класс — 1 000 ₽; 9 класс, школьная программа или подготовка к ОГЭ — 1 200 ₽. Продолжительность основного занятия — 60 минут.</p>
       </section>
       <SiteFooter />
     </main>
