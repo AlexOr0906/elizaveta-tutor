@@ -138,7 +138,7 @@ export default function BookingPage() {
                 <p className="field-hint">Укажите хотя бы один способ связи.</p>
                 <div className="form-row"><label>Класс<select name="grade" required defaultValue=""><option value="" disabled>Выберите</option><option>1–4 класс</option><option>5–8 класс</option><option>9 класс</option></select></label><label>Предмет<select name="subject" required defaultValue=""><option value="" disabled>Выберите</option><option>Математика</option><option>Русский язык</option></select></label></div>
                 <label>Формат занятия<select name="lesson_format" required defaultValue=""><option value="" disabled>Выберите</option><option>Онлайн</option><option>Офлайн</option></select></label>
-                <label>Цель занятий<textarea name="goal" placeholder="Например: повысить успеваемость, подготовиться к ВПР или ОГЭ" required /></label>
+                <label>Цель занятий<span className="contact-fast-hint">Для быстрой связи укажите ваш Telegram или Max.</span><textarea name="goal" placeholder="Например: повысить успеваемость, подготовиться к ВПР или ОГЭ" required /></label>
                 <label className="form-honeypot" aria-hidden="true">Ваш сайт<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
                 <label className="privacy-check"><input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} /> <span>Я согласен(на) на обработку данных и принимаю <Link href="/privacy">политику конфиденциальности</Link></span></label>
                 {submitError && <p className="form-error" role="alert">{submitError}</p>}
