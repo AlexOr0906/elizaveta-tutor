@@ -371,7 +371,7 @@ footer { background: #3e1d29; color: white; padding: 90px 0 34px; }
   .admin-slot-list { grid-template-columns:1fr; }.admin-booking header { flex-direction:column; }.admin-booking header > b { text-align:left; }
 }
 
-.prices-hero h1 em { display:inline-block; letter-spacing:0; padding-right:.08em; }
+.prices-hero h1 em { display:inline-block; margin-left:.14em; padding-right:.12em; letter-spacing:.035em; }
 .profile-contact { max-width:650px; margin:-2px 0 0; font-size:15px; line-height:1.6; }
 .profile-contact a { color:var(--wine); border-bottom:1px solid currentColor; font-weight:700; }
 .contact-fast-hint { display:block; margin-top:7px; text-transform:none; letter-spacing:0; font-size:12px; line-height:1.45; font-weight:400; opacity:.72; }
